@@ -1,4 +1,4 @@
-<h2>Work in progress!<h2>
+<h2>Work in progress!</h2>
 
 
 To start working you should launch H2 server from root directory and set location of the saved data in application.properties and in the server settings.
