@@ -15,7 +15,7 @@ import javax.servlet.MultipartConfigElement;
 import javax.sql.DataSource;
 
 @Configuration
-@PropertySource("app.properties")
+@PropertySource("application.properties")
 public class DataConfig {
     @Autowired
     private Environment env;
@@ -45,7 +45,6 @@ public class DataConfig {
         ds.setUrl(env.getProperty("mp3hosting.db.url"));
         ds.setUsername(env.getProperty("mp3hosting.db.username"));
         ds.setPassword(env.getProperty("mp3hosting.db.password"));
-
         return ds;
     }
 }
