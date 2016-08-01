@@ -14,6 +14,23 @@
 </head>
 <body>
 
+<div th:fragment="nav" class="navbar-fixed">
+    <nav>
+        <div class="container">
+            <a th:href="@{/}" class="brand-logo">Empe<span>-</span>three</a>
+            <a href="#" data-activates="mobile-nav" class="button-collapse right"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li th:classappend="${#httpServletRequest.servletPath.equals('/upload') ? 'active' : ''}"><a th:href="@{/upload}">Upload</a></li>
+                <li th:classappend="${#httpServletRequest.servletPath.equals('/') ? 'active' : ''}"><a th:href="@{/}">Explore</a></li>
+            </ul>
+            <ul id="mobile-nav" class="side-nav">
+                <li th:classappend="${#httpServletRequest.servletPath.equals('/upload') ? 'active' : ''}"><a th:href="@{/upload}">Upload</a></li>
+                <li th:classappend="${#httpServletRequest.servletPath.equals('/') ? 'active' : ''}"><a th:href="@{/}">Explore</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
 </body>
 <div th:fragment="scripts">
     <script th:src="@{/vendor/jquery/jquery-1.11.3.js}"></script>

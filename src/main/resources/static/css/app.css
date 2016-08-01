@@ -10,7 +10,7 @@ h2 {
 }
 
 nav {
-    background-color: #896bb3;
+    background-color: #79b377;
     box-shadow: none;
 }
 
@@ -23,9 +23,55 @@ nav ul li a {
 }
 
 nav ul li a, nav .brand-logo span {
-    color: #d6c5ec;
+    color: #b6eca6;
 }
 
 nav ul li.active, nav ul li:hover {
     background-color: inherit;
+}
+
+#mobile-nav, #mobile-nav li.active, #mobile-nav li:hover {
+    background-color: #37333d;
+}
+
+#mobile-nav li a {
+    font-size: 1.3rem;
+    color: #79b377;
+}
+
+#mobile-nav li.active a {
+    color: #fff;
+}
+
+#mobile-nav li {
+    border-bottom: 1px solid #27252b;
+}
+
+#sidenav-overlay {
+    background-color: transparent;
+}
+
+.btn-ghost:hover {
+    background-color: #59b3b3;
+    color: #ffffff;
+}
+
+.btn-ghost .material-icons {
+    position: relative;
+    display: inline-block;
+    top: 6px;
+}
+
+
+@media only screen and (max-width: 993px) {
+    nav .brand-logo {
+        left: 0;
+        -webkit-transform: none;
+        transform: none;
+        position: static;
+    }
+
+    .col {
+        padding-right: 0;
+    }
 }
