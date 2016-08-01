@@ -1,0 +1,31 @@
+@import url(https://fonts.googleapis.com/css?family=Varela+Round);
+
+body {
+    font-family: 'varela round', sans-serif;
+}
+
+h2 {
+    font-size: 1.6rem;
+    margin-bottom: 0;
+}
+
+nav {
+    background-color: #896bb3;
+    box-shadow: none;
+}
+
+nav .brand-logo, nav ul li.active a {
+    color: #fefefe;
+}
+
+nav ul li a {
+    font-size: 1.1rem;
+}
+
+nav ul li a, nav .brand-logo span {
+    color: #d6c5ec;
+}
+
+nav ul li.active, nav ul li:hover {
+    background-color: inherit;
+}

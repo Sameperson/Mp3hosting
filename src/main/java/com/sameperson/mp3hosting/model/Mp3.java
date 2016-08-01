@@ -19,7 +19,6 @@ public class Mp3 {
     private String hash;
     private LocalDateTime dateUploaded = LocalDateTime.now();
 
-
     public Mp3() {}
 
     public Long getId() {
