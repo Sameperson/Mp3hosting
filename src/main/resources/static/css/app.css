@@ -62,6 +62,82 @@ nav ul li.active, nav ul li:hover {
     top: 6px;
 }
 
+.divider {
+    margin: 0 0 1.6rem 0;
+}
+
+.file-wrapper {
+    border: 1px solid #dad7de;
+    border-radius: 6px;
+    background: #f7f5fa;
+}
+
+.file-wrapper:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+input[type=file] {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+label.button {
+    background: #79b377;
+    color: #fefefe;
+    padding: 1rem 1.4rem;
+    float: right;
+    margin: 0.2rem;
+}
+
+.file-wrapper .placeholder {
+    display: inline-block;
+    padding: 1rem;
+    color: #79b377;
+    font-size: 1.2rem;
+}
+
+input[type=text] {
+    display: block;
+    border: 1px solid #dad7de;
+    border-radius: 6px;
+    background: #f7f5fa;
+    padding: 1rem;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    height: initial;
+    box-sizing: border-box;
+    margin-bottom: 0;
+    color: #7a7580;
+}
+
+input[type=text]:focus:not([readonly]) {
+    border-bottom-color: #dad7de;
+    box-shadow: none;
+}
+
+.button {
+    margin-right: 1rem;
+    display: inline-block;
+    background: #f2f0f5;
+    border-radius: 4px;
+    border: none;
+    color: #a29fa6;
+    line-height: 1.5;
+    font-size: 0.9rem;
+    padding: 1rem 2rem;
+    text-align: center;
+}
+
+.button[type=submit] {
+    background: #79b377;
+    color: #fefefe;
+}
 
 @media only screen and (max-width: 993px) {
     nav .brand-logo {
