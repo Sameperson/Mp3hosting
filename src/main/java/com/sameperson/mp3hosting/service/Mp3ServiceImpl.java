@@ -4,6 +4,7 @@ import com.sameperson.mp3hosting.dao.Mp3Dao;
 import com.sameperson.mp3hosting.model.Mp3;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -24,7 +25,7 @@ public class Mp3ServiceImpl implements Mp3Service {
     }
 
     @Override
-    public void save(Mp3 mp3) {
+    public void save(Mp3 mp3, MultipartFile file) {
         mp3Dao.save(mp3);
     }
 
