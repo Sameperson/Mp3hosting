@@ -30,7 +30,7 @@ public class Mp3ServiceImpl implements Mp3Service {
         try {
             mp3.setData(file.getBytes());
         } catch (IOException e) {
-            //TODO: Add error handing
+            //TODO: Add error handling
             e.printStackTrace();
         }
         mp3Dao.save(mp3);
