@@ -22,10 +22,12 @@
             <ul class="right hide-on-med-and-down">
                 <li th:classappend="${#httpServletRequest.servletPath.equals('/upload') ? 'active' : ''}"><a th:href="@{/upload}">Upload</a></li>
                 <li th:classappend="${#httpServletRequest.servletPath.equals('/') ? 'active' : ''}"><a th:href="@{/}">Explore</a></li>
+                <li th:classappend="${#httpServletRequest.servletPath.equals('/login') ? 'active' : ''}"><a th:href="@{/login}">Login</a></li>
             </ul>
             <ul id="mobile-nav" class="side-nav">
                 <li th:classappend="${#httpServletRequest.servletPath.equals('/upload') ? 'active' : ''}"><a th:href="@{/upload}">Upload</a></li>
                 <li th:classappend="${#httpServletRequest.servletPath.equals('/') ? 'active' : ''}"><a th:href="@{/}">Explore</a></li>
+                <li th:classappend="${#httpServletRequest.servletPath.equals('/login') ? 'active' : ''}"><a th:href="@{/login}">Login</a></li>
             </ul>
         </div>
     </nav>
