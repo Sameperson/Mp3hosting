@@ -102,7 +102,7 @@ label.button {
     font-size: 1.2rem;
 }
 
-input[type=text] {
+input[type=text], input[type=password] {
     display: block;
     border: 1px solid #dad7de;
     border-radius: 6px;
@@ -116,7 +116,7 @@ input[type=text] {
     color: #7a7580;
 }
 
-input[type=text]:focus:not([readonly]) {
+input[type=text], input[type=password] :focus:not([readonly]) {
     border-bottom-color: #dad7de;
     box-shadow: none;
 }
