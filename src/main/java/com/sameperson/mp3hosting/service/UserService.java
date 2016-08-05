@@ -1,10 +1,12 @@
-package com.sameperson.mp3hosting.dao;
+package com.sameperson.mp3hosting.service;
 
 import com.sameperson.mp3hosting.model.User;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-public interface UserDao {
+@Service
+public interface UserService {
     List<User> findAll();
     User findById(Long id);
     User findByUsername(String username);
