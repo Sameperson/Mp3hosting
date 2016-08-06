@@ -1,12 +1,12 @@
 package com.sameperson.mp3hosting.service;
 
 import com.sameperson.mp3hosting.model.User;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
-public interface UserService {
+public interface UserService extends UserDetailsService{
     List<User> findAll();
     User findById(Long id);
     User findByUsername(String username);
