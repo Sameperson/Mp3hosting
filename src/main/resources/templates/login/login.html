@@ -11,6 +11,7 @@
         </div>
     </div>
     <div class="divider"></div>
+    <div th:replace="layout :: flash"></div>
     <form th:action="@{/login}" th:object="${user}" method="post" class="login">
         <div>
             <div class="row">
