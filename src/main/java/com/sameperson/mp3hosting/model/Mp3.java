@@ -10,7 +10,6 @@ public class Mp3 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(unique = true)
     @NotNull(message = "Shouldn't be empty")
     @Size(min = 3, max = 16, message = "Name should be from 3 to 16 characters in length")
     private String name;
