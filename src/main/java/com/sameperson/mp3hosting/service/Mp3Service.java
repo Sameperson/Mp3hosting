@@ -6,8 +6,8 @@ import org.springframework.web.multipart.MultipartFile;
 import java.util.List;
 
 public interface Mp3Service {
-//    List<Mp3> findAll();
-//    Mp3 findById(Long id);
+    Iterable<Mp3> findAll();
+    Mp3 findOne(Long id);
+    void save(Mp3 task);
     void save(Mp3 mp3, MultipartFile file);
-//    void delete(Mp3 mp3);
 }
