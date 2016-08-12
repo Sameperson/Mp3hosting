@@ -15,15 +15,15 @@ public class Mp3ServiceImpl implements Mp3Service {
     @Autowired
     private Mp3Dao mp3Dao;
 
-    @Override
-    public List<Mp3> findAll() {
-        return mp3Dao.findAll();
-    }
-
-    @Override
-    public Mp3 findById(Long id) {
-        return mp3Dao.findById(id);
-    }
+//    @Override
+//    public List<Mp3> findAll() {
+//        return mp3Dao.findAll();
+//    }
+//
+//    @Override
+//    public Mp3 findById(Long id) {
+//        return mp3Dao.findById(id);
+//    }
 
     @Override
     public void save(Mp3 mp3, MultipartFile file) {
@@ -35,9 +35,9 @@ public class Mp3ServiceImpl implements Mp3Service {
         }
         mp3Dao.save(mp3);
     }
-
-    @Override
-    public void delete(Mp3 mp3) {
-        mp3Dao.delete(mp3);
-    }
+//
+//    @Override
+//    public void delete(Mp3 mp3) {
+//        mp3Dao.delete(mp3);
+//    }
 }

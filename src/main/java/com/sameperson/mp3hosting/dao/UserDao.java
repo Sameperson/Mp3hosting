@@ -1,13 +1,11 @@
 package com.sameperson.mp3hosting.dao;
 
 import com.sameperson.mp3hosting.model.User;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
-public interface UserDao {
-    List<User> findAll();
-    User findById(Long id);
+@Repository
+public interface UserDao extends CrudRepository<User,Long> {
     User findByUsername(String username);
-    void save(User user);
-    void delete(User user);
 }
+

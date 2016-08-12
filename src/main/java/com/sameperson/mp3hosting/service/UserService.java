@@ -7,9 +7,5 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 public interface UserService extends UserDetailsService{
-    List<User> findAll();
-    User findById(Long id);
     User findByUsername(String username);
-    void save(User user);
-    void delete(User user);
 }
