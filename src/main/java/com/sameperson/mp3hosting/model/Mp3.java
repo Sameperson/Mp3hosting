@@ -15,7 +15,9 @@ public class Mp3 {
     private String name;
     @Lob
     private byte[] data;
-    private String username = "You";
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
     private String hash;
     private LocalDateTime dateUploaded = LocalDateTime.now();
 
@@ -45,20 +47,20 @@ public class Mp3 {
         this.data = data;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     public LocalDateTime getDateUploaded() {
         return dateUploaded;
     }
 
     public void setDateUploaded(LocalDateTime dateUploaded) {
         this.dateUploaded = dateUploaded;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
     }
 
     public String getHash() {

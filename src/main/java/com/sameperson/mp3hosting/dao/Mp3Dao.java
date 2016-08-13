@@ -9,6 +9,6 @@ import java.util.List;
 
 @Repository
 public interface Mp3Dao extends CrudRepository<Mp3, Long> {
-    @Query("select a from Mp3 a where a.user.id=:#{principal.id}")
+    @Query("select t from Mp3 t where t.user.id=:#{principal.id}")
     List<Mp3> findAll();
 }

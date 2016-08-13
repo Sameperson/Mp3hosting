@@ -3,13 +3,12 @@
 <head th:fragment="head(page_title)" lang="en">
     <meta charset="UTF-8"/>
     <meta description="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="icon" th:href="@{/assets/favicon.png}" />
+    <link rel="icon" th:href="@{/assfavicon.png}" />
     <link rel="stylesheet" th:href="@{/assets/vendor/materialize/css/materialize.css}" />
     <link rel="stylesheet" th:href="@{/assets/vendor/codrops/css/cs-select.css}" />
     <link rel="stylesheet" th:href="@{/assets/vendor/codrops/css/cs-skin-border.css}" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" th:href="@{/assets/css/app.css}" />
-
     <title th:text="'Empe-Three | ' + ${page_title}">Empe-Three</title>
 </head>
 <body>
@@ -23,6 +22,13 @@
                 <li th:classappend="${#httpServletRequest.servletPath.equals('/upload') ? 'active' : ''}"><a th:href="@{/upload}">Upload</a></li>
                 <li th:classappend="${#httpServletRequest.servletPath.equals('/') ? 'active' : ''}"><a th:href="@{/}">Explore</a></li>
                 <li th:classappend="${#httpServletRequest.servletPath.equals('/login') ? 'active' : ''}"><a th:href="@{/login}">Login</a></li>
+                <!--TODO: Username should appear in nav bar-->
+                <li sec:authentication="name"></li>
+                <li>
+                    <form class="logout inline" th:action="@{/logout}" method="post">
+                        <button type="submit"><i class="material-icons">power_settings_new</i></button>
+                    </form>
+                </li>
             </ul>
             <ul id="mobile-nav" class="side-nav">
                 <li th:classappend="${#httpServletRequest.servletPath.equals('/upload') ? 'active' : ''}"><a th:href="@{/upload}">Upload</a></li>
