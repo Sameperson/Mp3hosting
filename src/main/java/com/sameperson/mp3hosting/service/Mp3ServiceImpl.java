@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.List;
 
 @Service
 public class Mp3ServiceImpl implements Mp3Service {
@@ -15,7 +16,7 @@ public class Mp3ServiceImpl implements Mp3Service {
     private Mp3Dao mp3Dao;
 
     @Override
-    public Iterable<Mp3> findAll() {
+    public List<Mp3> findAll() {
         return mp3Dao.findAll();
     }
 
