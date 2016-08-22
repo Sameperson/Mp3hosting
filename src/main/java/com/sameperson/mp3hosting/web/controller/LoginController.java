@@ -19,4 +19,8 @@ public class LoginController {
         return "login/login";
     }
 
+    @RequestMapping("/access_denied")
+    public String accessDenied() {
+        return "access_denied";
+    }
 }

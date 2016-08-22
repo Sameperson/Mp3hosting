@@ -22,13 +22,13 @@
                 <li th:classappend="${#httpServletRequest.servletPath.equals('/upload') ? 'active' : ''}"><a th:href="@{/upload}">Upload</a></li>
                 <li th:classappend="${#httpServletRequest.servletPath.equals('/') ? 'active' : ''}"><a th:href="@{/}">Explore</a></li>
                 <li th:classappend="${#httpServletRequest.servletPath.equals('/login') ? 'active' : ''}"><a th:href="@{/login}">Login</a></li>
-                <!--TODO: Username should appear in nav bar-->
                 <li sec:authentication="name"></li>
                 <li>
                     <form class="logout inline" th:action="@{/logout}" method="post">
                         <button type="submit"><i class="material-icons">power_settings_new</i></button>
                     </form>
                 </li>
+
             </ul>
             <ul id="mobile-nav" class="side-nav">
                 <li th:classappend="${#httpServletRequest.servletPath.equals('/upload') ? 'active' : ''}"><a th:href="@{/upload}">Upload</a></li>
