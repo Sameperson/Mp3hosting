@@ -147,7 +147,29 @@ input[type=text], input[type=password] :focus:not([readonly]) {
         position: static;
     }
 
+    .container {
+        width: 100%;
+    }
+
+    .mp3s.container {
+        padding: 0;
+        margin-top: 1.1rem;
+    }
+
+    .mp3s.container .col {
+        padding: 0 0.75rem !important;
+    }
+
     .col {
         padding-right: 0;
+    }
+
+    .mp3s.container h2 {
+        margin-left: 12px;
+        margin-right: 12px;
+    }
+
+    .mp3s {
+        padding: 0 1.5rem;
     }
 }
