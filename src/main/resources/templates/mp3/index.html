@@ -5,7 +5,13 @@
 <div th:replace="layout :: nav"></div>
 <div th:replace="layout :: flash"></div>
 <div class="mp3s container">
-
+    <div class="row">
+        <div th:each="mp3 : ${mp3s}" class="col s12 l4">
+            <a th:href="@{|/mp3s/${mp3.id}|}" class="actions">
+                <img th:src="@{|/mp3s/${mp3.id}.mp3|}" alt="mp3" />
+            </a>
+        </div>
+    </div>
 </div>
 <div th:replace="layout :: scripts"></div>
 </body>
