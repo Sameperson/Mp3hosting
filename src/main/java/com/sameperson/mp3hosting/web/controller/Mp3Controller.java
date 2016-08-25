@@ -1,6 +1,7 @@
 package com.sameperson.mp3hosting.web.controller;
 
 import com.sameperson.mp3hosting.model.Mp3;
+import com.sameperson.mp3hosting.service.Mp3NotFoundException;
 import com.sameperson.mp3hosting.service.Mp3Service;
 import com.sameperson.mp3hosting.web.FlashMessage;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,9 +31,9 @@ public class Mp3Controller {
         return mp3Service.findOne(mp3Id).getData();
     }
 
-    @RequestMapping("/audio/{audioId}")
-    public String mp3Details(@PathVariable Long audioId, Model model) {
-        Mp3 mp3 = mp3Service.findOne(audioId);
+    @RequestMapping("/audio/{mp3Id}")
+    public String mp3Details(@PathVariable Long mp3Id, Model model) {
+        Mp3 mp3 = mp3Service.findOne(mp3Id);
         model.addAttribute("mp3", mp3);
         return "mp3/details";
     }
@@ -54,6 +55,12 @@ public class Mp3Controller {
         redirectAttributes.addFlashAttribute("flash",new FlashMessage("Mp3 successfully uploaded", FlashMessage.Status.SUCCESS));
         return "redirect:/";
 //        return String.format("redirect:/mp3s/%s", mp3.getId());
+    }
+
+    @ExceptionHandler(Mp3NotFoundException.class)
+    public String notFound(Model model, Exception exception) {
+        model.addAttribute("exception", exception);
+        return "error";
     }
 
 }

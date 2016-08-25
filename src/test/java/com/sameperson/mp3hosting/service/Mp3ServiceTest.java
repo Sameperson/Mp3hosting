@@ -40,4 +40,10 @@ public class Mp3ServiceTest {
         Mockito.verify(mp3Dao).findOne(1L);
     }
 
+    @Test(expected = Mp3NotFoundException.class)
+    public void findOne_ShouldThrowMp3NotFoundException() {
+        Mockito.when(mp3Dao.findOne(1L)).thenReturn(null);
+        mp3Service.findOne(1L);
+        Mockito.verify(mp3Dao).findOne(1L);
+    }
 }
