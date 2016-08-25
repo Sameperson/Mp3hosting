@@ -22,7 +22,11 @@ public class Mp3ServiceImpl implements Mp3Service {
 
     @Override
     public Mp3 findOne(Long id) {
-        return mp3Dao.findOne(id);
+        Mp3 mp3 = mp3Dao.findOne(id);
+        if(mp3 == null) {
+            throw new Mp3NotFoundException();
+        }
+        return mp3;
     }
 
     @Override
