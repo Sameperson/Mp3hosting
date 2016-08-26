@@ -1,16 +1,19 @@
 package com.sameperson.mp3hosting.web.controller;
 
 import com.sameperson.mp3hosting.model.Mp3;
+import com.sameperson.mp3hosting.model.User;
 import com.sameperson.mp3hosting.service.Mp3NotFoundException;
 import com.sameperson.mp3hosting.service.Mp3Service;
 import com.sameperson.mp3hosting.web.FlashMessage;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.security.Principal;
 import java.util.List;
 
 @Controller
@@ -50,7 +53,9 @@ public class Mp3Controller {
     }
 
     @RequestMapping(value = "/mp3s", method = RequestMethod.POST)
-    public String addGif(Mp3 mp3, @RequestParam MultipartFile file, RedirectAttributes redirectAttributes) {
+    public String addMp3(Mp3 mp3, @RequestParam MultipartFile file, RedirectAttributes redirectAttributes, Principal principal) {
+        User user = (User)((UsernamePasswordAuthenticationToken)principal).getPrincipal();
+        mp3.setUser(user);
         mp3Service.save(mp3, file);
         redirectAttributes.addFlashAttribute("flash",new FlashMessage("Mp3 successfully uploaded", FlashMessage.Status.SUCCESS));
         return "redirect:/";
