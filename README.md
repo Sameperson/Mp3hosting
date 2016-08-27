@@ -5,4 +5,4 @@ To start working you should launch H2 server from root directory and set locatio
 
 H2 server starts from terminal with command "java -cp h2.jar org.h2.tools.Server". Default address is "http://10.0.5.100:8082/". Use login and password from application.properties file to log in.
 
-Technologies used: Spring (MVP, JPA, Security), Hibernate, Thymeleaf, JUnit, Mockito, jQuery
+Technologies used: Spring (MVC, JPA, Security), Hibernate, Thymeleaf, JUnit, Mockito, jQuery
