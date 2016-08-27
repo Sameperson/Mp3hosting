@@ -15,6 +15,7 @@ public class Mp3 {
     private String name;
     @Lob
     private byte[] data;
+    private boolean availableForEveryone;
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
@@ -70,4 +71,13 @@ public class Mp3 {
     public void setHash(String hash) {
         this.hash = hash;
     }
+
+    public boolean isAvailableForEveryone() {
+        return availableForEveryone;
+    }
+
+    public void setAvailableForEveryone(boolean availableForEveryone) {
+        this.availableForEveryone = availableForEveryone;
+    }
 }
+
