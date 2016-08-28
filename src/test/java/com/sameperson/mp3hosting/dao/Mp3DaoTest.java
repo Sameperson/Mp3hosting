@@ -43,4 +43,9 @@ public class Mp3DaoTest {
     public void findAll_ShouldReturnTwo() throws Exception {
         assertThat(mp3Dao.findAll(), hasSize(2));
     }
+
+    @Test
+    public void findAllPublic_ShouldReturnFour() {
+        assertThat(mp3Dao.findAllPublic(), hasSize(4));
+    }
 }

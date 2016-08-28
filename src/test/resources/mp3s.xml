@@ -1,7 +1,11 @@
 <dataset>
     <user id="1" username="user1" password="password" enabled="true" role_id="1"/>
     <user id="2" username="user2" password="password" enabled="true" role_id="1"/>
-    <mp3 id="1" name="Track_01" user_id="1" />
-    <mp3 id="2" name="Track_02" user_id="1" />
-    <mp3 id="3" name="Track_03" user_id="2" />
+    <mp3 id="1" name="Track_01" user_id="1" availableForEveryone = "false"/>
+    <mp3 id="2" name="Track_02" user_id="1" availableForEveryone = "false"/>
+    <mp3 id="3" name="Track_03" user_id="2" availableForEveryone = "false"/>
+    <mp3 id="4" name="Track_04" user_id="2" availableForEveryone = "true"/>
+    <mp3 id="5" name="Track_05" user_id="2" availableForEveryone = "true"/>
+    <mp3 id="6" name="Track_06" user_id="2" availableForEveryone = "true"/>
+    <mp3 id="7" name="Track_07" user_id="2" availableForEveryone = "true"/>
 </dataset>

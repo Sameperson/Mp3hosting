@@ -11,4 +11,7 @@ import java.util.List;
 public interface Mp3Dao extends CrudRepository<Mp3, Long> {
     @Query("select t from Mp3 t where t.user.id=:#{principal.id}")
     List<Mp3> findAll();
+
+    @Query("select t from Mp3 t where t.availableForEveryone = true")
+    List<Mp3> findAllPublic();
 }
