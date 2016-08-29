@@ -22,10 +22,17 @@ public class Mp3Controller {
     private Mp3Service mp3Service;
 
     @RequestMapping("/")
-    public String listMp3s(Model model) {
-        List<Mp3> mp3s = mp3Service.findAll();
+    public String listAllMp3s(Model model) {
+        List<Mp3> mp3s = mp3Service.findAllPublic();
         model.addAttribute("mp3s", mp3s);
         return "mp3/index";
+    }
+
+    @RequestMapping("/personal-files")
+    public String listPersonalMp3s(Model model) {
+        List<Mp3> mp3s = mp3Service.findAll();
+        model.addAttribute("mp3s", mp3s);
+        return "mp3/personal_mp3s";
     }
 
     @RequestMapping("/mp3s/{mp3Id}.mp3")

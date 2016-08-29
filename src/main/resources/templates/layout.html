@@ -20,6 +20,7 @@
             <a href="#" data-activates="mobile-nav" class="button-collapse right"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
                 <li th:classappend="${#httpServletRequest.servletPath.equals('/upload') ? 'active' : ''}"><a th:href="@{/upload}">Upload</a></li>
+                <li th:classappend="${#httpServletRequest.servletPath.equals('/personal-files') ? 'active' : ''}"><a th:href="@{/personal-files}">Your files</a></li>
                 <li th:classappend="${#httpServletRequest.servletPath.equals('/') ? 'active' : ''}"><a th:href="@{/}">Explore</a></li>
                 <li th:classappend="${#httpServletRequest.servletPath.equals('/login') ? 'active' : ''}"><a th:href="@{/login}">Login</a></li>
                 <li sec:authentication="name"></li>

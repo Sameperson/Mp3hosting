@@ -21,6 +21,11 @@ public class Mp3ServiceImpl implements Mp3Service {
     }
 
     @Override
+    public List<Mp3> findAllPublic() {
+        return mp3Dao.findAllPublic();
+    }
+
+    @Override
     public Mp3 findOne(Long id) {
         Mp3 mp3 = mp3Dao.findOne(id);
         if(mp3 == null) {

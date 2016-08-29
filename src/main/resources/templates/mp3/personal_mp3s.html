@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="layout :: head('upload')"></head>
+<body>
+<div th:replace="layout :: nav"></div>
+<div th:replace="layout :: flash"></div>
+<div class="mp3s container">
+    <div class="row">
+        <div th:each="mp3 : ${mp3s}" class="col s12 l4">
+            <a th:href="@{|/mp3s/${mp3.id}.mp3|}" class="actions">
+                <audio th:src="@{|/mp3s/${mp3.id}.mp3|}" controls="controls" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </a>
+        </div>
+    </div>
+</div>
+<div th:replace="layout :: scripts"></div>
+</body>
+</html>
