@@ -1,6 +1,7 @@
 package com.sameperson.mp3hosting.config;
 
 import com.sameperson.mp3hosting.service.UserService;
+import com.sameperson.mp3hosting.web.FlashMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,6 +16,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.data.repository.query.spi.EvaluationContextExtension;
 import org.springframework.data.repository.query.spi.EvaluationContextExtensionSupport;
+import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 import javax.servlet.ServletException;
@@ -50,6 +52,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .loginPage("/login")
                     .permitAll()
                     .successHandler(authSuccessHandler())
+                    .failureHandler(loginFailureHandler())
                     .and()
                 .logout()
                     .permitAll()
@@ -62,6 +65,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
                 response.sendRedirect("/");
             }
+        };
+    }
+
+    public AuthenticationFailureHandler loginFailureHandler() {
+        return (request, response, exception) -> {
+            request.getSession().setAttribute("flash", new FlashMessage("Wrong username or password, please try again.", FlashMessage.Status.FAILURE));
+            response.sendRedirect("/login");
         };
     }
 
