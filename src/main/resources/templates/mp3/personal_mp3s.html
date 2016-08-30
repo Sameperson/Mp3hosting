@@ -8,6 +8,7 @@
     <div class="row">
         <div th:each="mp3 : ${mp3s}" class="col s12 l4">
             <a th:href="@{|/mp3s/${mp3.id}.mp3|}" class="actions">
+                <h4 th:text="${mp3.name}"></h4>
                 <audio th:src="@{|/mp3s/${mp3.id}.mp3|}" controls="controls" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
