@@ -80,4 +80,3 @@ public class Mp3 {
         this.availableForEveryone = availableForEveryone;
     }
 }
-
