@@ -35,11 +35,12 @@ public class DataConfig {
         factory.setJpaProperties(getHibernateProperties());
         return factory;
     }
+
     @Bean
     public MultipartConfigElement multipartConfigElement() {
         MultipartConfigFactory factory = new MultipartConfigFactory();
-        factory.setMaxFileSize("128MB");
-        factory.setMaxRequestSize("128MB");
+        factory.setMaxFileSize(env.getProperty("mp3hosting.multipart.max_file_size"));
+        factory.setMaxRequestSize(env.getProperty("mp3hosting.multipart.max_request_size"));
         return factory.createMultipartConfig();
     }
 
