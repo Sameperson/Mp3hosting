@@ -5,9 +5,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.embedded.MultipartConfigFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.jdbc.datasource.lookup.JndiDataSourceLookup;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
@@ -17,7 +19,7 @@ import javax.sql.DataSource;
 import java.util.Properties;
 
 @Configuration
-@PropertySource("application.properties")
+@PropertySource("classpath:application.properties")
 @EnableJpaRepositories(basePackages = "com.sameperson.mp3hosting.dao")
 public class DataConfig {
     @Autowired
@@ -42,6 +44,7 @@ public class DataConfig {
     }
 
     @Bean
+    @Profile("development")
     public DataSource dataSource() {
         BasicDataSource ds = new BasicDataSource();
         ds.setDriverClassName(env.getProperty("mp3hosting.db.driver"));
@@ -49,6 +52,12 @@ public class DataConfig {
         ds.setUsername(env.getProperty("mp3hosting.db.username"));
         ds.setPassword(env.getProperty("mp3hosting.db.password"));
         return ds;
+    }
+
+    @Bean(name = "dataSource")
+    @Profile("production")
+    public DataSource jndiDataSource() {
+        return new JndiDataSourceLookup().getDataSource(env.getProperty("mp3.jndi"));
     }
 
     private Properties getHibernateProperties() {
